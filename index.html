@@ -1,0 +1,80 @@
+<html>
+  <body>
+    <div class="well" style="padding:50px; ">
+      <h2 style="text-align:center;">Code Generator</h2>
+      <div class="container-fluid" style="background-color:red;border: 1px solid gray;border-radius:2px;padding:30px;text-align:center;">
+          <div class="row">
+              <div class="col-md-12">
+                  <h1 id="final-val">0</h1>
+              </div>
+          </div>
+      </div>
+
+      <hr/>
+
+      <h3>Input 1</h3>
+      <p>Clue: Places to Visit</p>
+      <div class="input-group" >
+          <span class="input-group-addon" style="color:black;" >?</span>
+          <input type="number" class="form-control" id="in-1" placeholder="Answer" aria-describedby="sizing-addon2">
+      </div>
+
+      <h3>Input 2</h3>
+      <p>Clue: Gotta have music on the way to rally</p>
+      <div class="input-group">
+          <span class="input-group-addon" style="color:black;" >A</span>
+          <input type="text" class="form-control" id="in-2-A"  placeholder="Answer" aria-describedby="sizing-addon2">
+      </div>
+      <div class="input-group">
+          <span class="input-group-addon" style="color:black;" >B</span>
+          <input type="text" class="form-control" id="in-2-B" placeholder="Answer" aria-describedby="sizing-addon2">
+      </div>
+
+      <h3>Input 3</h3>
+      <p>Clue: Who's coming to Rally?</p>
+      <div class="input-group">
+          <input type="number" class="form-control" id="in-3" placeholder="Answer" aria-describedby="sizing-addon2">
+          <span class="input-group-addon" style="color:black;" >kg</span>
+      </div>
+
+      <h3>Input 4</h3>
+      <p>Clue: Number Plate</p>
+      <div class="input-group">
+          <span class="input-group-addon" style="color:black;" >?</span>
+          <input type="text" class="form-control" id="in-4" placeholder="Answer" aria-describedby="sizing-addon2">
+      </div>
+
+      <h3>Input 5</h3>
+      <p>Clue: Damage Report</p>
+      <div class="input-group">
+          <span class="input-group-addon" style="color:black;" >£</span>
+          <input type="number" class="form-control" id="in-5" placeholder="Answer" aria-describedby="sizing-addon2">
+      </div>
+
+    </div>
+    <script>
+        function toCharSum(str) {
+            var strsum = 0;
+            for(var i = 0; i<str.length; i++){
+                strsum = strsum + str.charCodeAt(i);
+            }
+            return strsum;
+        }
+
+        function getValues() {
+            var in_one = $("#in-1").val()
+            var in_two_A = $("#in-2-A").val().toLowerCase().replace(/\s/g, '');
+            var in_two_B = $("#in-2-B").val().toLowerCase().replace(/\s/g, '');
+            var in_three = $("#in-3").val();
+            var in_four = $("#in-4").val().toLowerCase().replace(/\s/g, '');
+            var in_five = $("#in-5").val();
+
+            var total = toCharSum(in_two_A) + toCharSum(in_two_B) + (30 * parseFloat(in_three)) + toCharSum(in_four) + parseInt(in_five) + (parseInt(in_one) * 12) + 34;
+
+            $("#final-val").html(total);
+        };    
+        $("input").change(getValues);
+
+    </script>
+  </body>
+</html>
