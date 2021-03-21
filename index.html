@@ -4,10 +4,10 @@
     <script>
       
       /* event listener */
-      document.getElementsById("in-1")[0].addEventListener('change', getValues);
-      document.getElementsById("in-3")[0].addEventListener('change', getValues);
-      document.getElementsById("in-4")[0].addEventListener('change', getValues);
-      document.getElementsById("in-5")[0].addEventListener('change', getValues);
+      document.getElementById("in-1")[0].addEventListener('change', getValues);
+      document.getElementById("in-3")[0].addEventListener('change', getValues);
+      document.getElementById("in-4")[0].addEventListener('change', getValues);
+      document.getElementById("in-5")[0].addEventListener('change', getValues);
 
       
         function toCharSum(str) {
@@ -19,14 +19,14 @@
         }
 
         function getValues() {
-            var in_one = document.getElementsById("in-1").val()
-            var in_three = document.getElementsById("in-3").val();
-            var in_four = document.getElementsById("in-4").val().toLowerCase().replace(/\s/g, '');
-            var in_five = document.getElementsById("in-5").val();
+            var in_one = document.getElementById("in-1").value
+            var in_three = document.getElementById("in-3").value;
+            var in_four = document.getElementById("in-4").value.toLowerCase().replace(/\s/g, '');
+            var in_five = document.getElementById("in-5").value;
 
             var total = (30 * parseFloat(in_three)) + toCharSum(in_four) + parseInt(in_five) + (parseInt(in_one) * 12) + 34;
 
-            $("#final-val").html(total);
+            document.getElementById("final-val").value = total;
         };    
 
     </script>
