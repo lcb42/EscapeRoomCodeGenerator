@@ -2,13 +2,13 @@
   <head>
     <title>Code Generator</title>
     <script>
-      
-      /* event listener */
-      document.getElementById("in-1")[0].addEventListener('change', getValues);
-      document.getElementById("in-3")[0].addEventListener('change', getValues);
-      document.getElementById("in-4")[0].addEventListener('change', getValues);
-      document.getElementById("in-5")[0].addEventListener('change', getValues);
-
+      window.onload = function() {
+        /* event listeners */
+        document.getElementById("in-1").addEventListener('change', getValues);
+        document.getElementById("in-3").addEventListener('change', getValues);
+        document.getElementById("in-4").addEventListener('change', getValues);
+        document.getElementById("in-5").addEventListener('change', getValues);
+      }
       
         function toCharSum(str) {
             var strsum = 0;
