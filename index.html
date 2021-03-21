@@ -25,6 +25,11 @@
             var in_five = document.getElementById("in-5").value;
 
             var total = (30 * parseFloat(in_three)) + toCharSum(in_four) + parseInt(in_five) + (parseInt(in_one) * 12) + 34;
+          
+          if(total === NaN)
+          {
+            total = "Please enter all values to recieve a code.";
+          }
 
             document.getElementById("final-val").innerHTML = total.toString();
         };    
@@ -37,7 +42,7 @@
       <div class="container-fluid" style="background-color:red;border: 1px solid gray;border-radius:2px;padding:30px;text-align:center;">
           <div class="row">
               <div class="col-md-12">
-                  <h1 id="final-val">0</h1>
+                  <h1 id="final-val">Please enter all values to recieve a code.</h1>
               </div>
           </div>
       </div>
