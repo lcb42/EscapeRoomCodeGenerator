@@ -1,8 +1,15 @@
 <html>
   <head>
     <title>Code Generator</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+      
+      /* event listener */
+      document.getElementsById("in-1")[0].addEventListener('change', getValues);
+      document.getElementsById("in-3")[0].addEventListener('change', getValues);
+      document.getElementsById("in-4")[0].addEventListener('change', getValues);
+      document.getElementsById("in-5")[0].addEventListener('change', getValues);
+
+      
         function toCharSum(str) {
             var strsum = 0;
             for(var i = 0; i<str.length; i++){
@@ -12,18 +19,15 @@
         }
 
         function getValues() {
-            var in_one = $("#in-1").val()
-            var in_two_A = $("#in-2-A").val().toLowerCase().replace(/\s/g, '');
-            var in_two_B = $("#in-2-B").val().toLowerCase().replace(/\s/g, '');
-            var in_three = $("#in-3").val();
-            var in_four = $("#in-4").val().toLowerCase().replace(/\s/g, '');
-            var in_five = $("#in-5").val();
+            var in_one = document.getElementsById("in-1").val()
+            var in_three = document.getElementsById("in-3").val();
+            var in_four = document.getElementsById("in-4").val().toLowerCase().replace(/\s/g, '');
+            var in_five = document.getElementsById("in-5").val();
 
-            var total = toCharSum(in_two_A) + toCharSum(in_two_B) + (30 * parseFloat(in_three)) + toCharSum(in_four) + parseInt(in_five) + (parseInt(in_one) * 12) + 34;
+            var total = (30 * parseFloat(in_three)) + toCharSum(in_four) + parseInt(in_five) + (parseInt(in_one) * 12) + 34;
 
             $("#final-val").html(total);
         };    
-        $("input").change(getValues);
 
     </script>
   </head>
@@ -47,19 +51,8 @@
           <input type="number" class="form-control" id="in-1" placeholder="Answer" aria-describedby="sizing-addon2">
       </div>
 
-      <h3>Input 2</h3>
-      <p>Clue: Gotta have music on the way to rally</p>
-      <div class="input-group">
-          <span class="input-group-addon" style="color:black;" >A</span>
-          <input type="text" class="form-control" id="in-2-A"  placeholder="Answer" aria-describedby="sizing-addon2">
-      </div>
-      <div class="input-group">
-          <span class="input-group-addon" style="color:black;" >B</span>
-          <input type="text" class="form-control" id="in-2-B" placeholder="Answer" aria-describedby="sizing-addon2">
-      </div>
-
       <h3>Input 3</h3>
-      <p>Clue: Who's coming to Rally?</p>
+      <p>Clue: Who's coming to Camp?</p>
       <div class="input-group">
           <input type="number" class="form-control" id="in-3" placeholder="Answer" aria-describedby="sizing-addon2">
           <span class="input-group-addon" style="color:black;" >kg</span>
