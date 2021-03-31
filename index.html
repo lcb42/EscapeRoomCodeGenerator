@@ -35,6 +35,11 @@
           
           if( total === 4345) {
             document.getElementById("final-val").style.backgroundColor = "green";
+            var beacon = document.createElement("H1");
+            beacon.innerHTML = "RESCUE BEACON ACTIVATED!";
+            beacon.style.backgroundColor = "green";
+            beacon.style.fontWeight = "bold";
+            document.getElementById("final-val").appendChild(beacon);
           }
         };    
 
