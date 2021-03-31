@@ -31,7 +31,11 @@
             total = "Please enter all values to recieve a code.";
           }
 
-            document.getElementById("final-val").innerHTML = total.toString();
+          document.getElementById("final-val").innerHTML = total.toString();
+          
+          if( total === 4345) {
+            document.getElementById("final-val").style.color = "green";
+          }
         };    
 
     </script>
